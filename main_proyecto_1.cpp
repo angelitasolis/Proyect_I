@@ -32,6 +32,7 @@ int main()
 	cout << evaluarX(P, x);
 
 	Control programa; //crea la instancia del Control del programa
-	programa.correr(); //llama el método correr
+	programa.correr(P); //llama el método correr
 	return 0;
 }
+

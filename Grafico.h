@@ -10,7 +10,7 @@ public:
 
 	//método para pintar usando la biblioteca CImg
 	void pintar(CImg<unsigned char>& imagen);
-	void calcularSeno();
+	void calcularPolinomio(long double P[r]);
 private:
 
 	//Ubicación en la ventana de la coordenada 0,0 (x,y):

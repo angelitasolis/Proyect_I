@@ -143,14 +143,14 @@ void Mostrar_Polinomio(long double P[r])
 	return;
 }
 long double evaluarX(long double P[r], long double x) {
-	int result = P[r - 1];
+	long double result = P[r - 1];
 	for (int i = r - 1; i >= 1; i--) {
 		result = result * x + P[i - 1];
 	}
 	return result;
 }
 
-Grafico::Grafico() {
+Grafico::Grafico(){
 
 	//ubicación en pixeles para graficar en la ventana:
 	ubicX0 = 10;
@@ -162,16 +162,15 @@ Grafico::Grafico() {
 	}
 }
 
-void::Grafico::calcularSeno() {
+void::Grafico::calcularPolinomio(long double P[r]) {
 	//auxX se usará para los valores del eje X
 	double auxX = -3.0;
 
 	for (int i = 0; i < n; i++) {
 		auxX += 0.03; //la x tiene incrementos de 0.03 radianes
-
 		//el rango del seno va de -1 a 1, de modo que para graficar lo aumentamos 100 veces
 		//de ese modo el gráfico tendrá valores entre -100 y 100 pixeles en el eje Y
-		valores_Y[i] = int(sin(auxX) * 100);
+		valores_Y[i] = evaluarX(P, auxX)*33; 
 	}
 }
 
@@ -180,9 +179,9 @@ void Grafico::pintar(CImg<unsigned char>& imagen) {
 	const unsigned char negro[] = { 0, 0, 0 }; //los valores corresponden a {Red, Green, Blue,}
 	const unsigned char rojo[] = { 250, 0, 0 };
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n - 1; i++) {
 		//dibujar un punto correspondiente al valor de Y guardado en valores_Y
-		imagen.draw_point(ubicX0 + i, ubicY0 - valores_Y[i], negro);
+		imagen.draw_line(ubicX0 + i, ubicY0 - valores_Y[i], ubicX0 + i + 1, ubicY0 - valores_Y[i + 1], negro);
 	}
 
 	//Pintar bordes y eje X del gráfico
@@ -202,10 +201,10 @@ Control::Control() {
 
 }
 
-void Control::correr() { //método que controla la ejecución del programa
+void Control::correr(long double P[r]) { //método que controla la ejecución del programa
 
-	//llama el método calcularSeno() del objeto "grafico_Seno" (objeto de la clase Grafico)
-	grafico_Seno.calcularSeno();
+	//llama el método calcularPolinomio() del objeto "grafico_Seno" (objeto de la clase Grafico)
+	grafico_Seno.calcularPolinomio(P);
 
 	//mientras la ventana no se cierre, llama el método pintar del objeto "programa" (objeto de la clase Control)
 	while (!ventana.is_closed()) {

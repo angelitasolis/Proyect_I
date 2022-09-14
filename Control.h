@@ -9,7 +9,7 @@ class Control
 {
 public:
 	Control(); //constructor de la clase
-	void correr(); //método público que controla la ejecución del programa
+	void correr(long double P[r]); //método público que controla la ejecución del programa
 private:
 	CImgDisplay ventana; //atributo Display de la biblioteca CImg
 	CImg<unsigned char> imagen; //atributo imagen de la biblioteca CImg, corresponde al contenido de la ventana
