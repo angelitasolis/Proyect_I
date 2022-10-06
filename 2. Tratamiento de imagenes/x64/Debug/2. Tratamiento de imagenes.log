@@ -1,0 +1,8 @@
+﻿  2. Tratamiento de imagenes.cpp
+C:\Users\GOLLO\Desktop\2. Tratamiento de imagenes\2. Tratamiento de imagenes.cpp(10,24): warning C4101: 'porcentaje': variable local sin referencia
+C:\Users\GOLLO\Desktop\2. Tratamiento de imagenes\2. Tratamiento de imagenes.cpp(11,11): warning C4101: 'enfriar': variable local sin referencia
+C:\Users\GOLLO\Desktop\2. Tratamiento de imagenes\2. Tratamiento de imagenes.cpp(11,20): warning C4101: 'fc': variable local sin referencia
+  Metodos.cpp
+C:\Users\GOLLO\Desktop\2. Tratamiento de imagenes\Metodos.cpp(175,35): warning C4244: '=': conversión de 'long double' a 'int'; posible pérdida de datos
+  Generando código...
+  2. Tratamiento de imagenes.vcxproj -> C:\Users\GOLLO\Desktop\2. Tratamiento de imagenes\x64\Debug\2. Tratamiento de imagenes.exe
